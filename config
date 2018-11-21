@@ -1,0 +1,15 @@
+sudo npm install -g ganache-cli
+ganache-cli
+
+tao project moi
+npm init
+npm install web3@0.20.6 --save
+
+npm install lite-server --save-dev --no-optional
+
+npm run dev
+
+muffin baby bamboo giant service panda bargain swift galaxy coral social lion
+
+
+https://coursetro.com/posts/code/103/Solidity-Inheritance-and-Deploying-an-Ethereum-Smart-Contract
