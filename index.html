@@ -269,16 +269,17 @@
            }
        });
 
-       Coursetro.countInstructors((err, res) => {
+     /*  Coursetro.countInstructors((err, res) => {
            if (res)
             $("#countIns").html(res.c + ' Instructors');
-       })
+       })*/
 
 	  /* Coursetro.findID((err, res) => {
            if (res)
             $("#instructor").html(res.c );
        })*/
-
+	   
+	   
        $("#button").click(function() {
             $("#loader").show();
            Coursetro.setInstructor(web3.eth.defaultAccount, $("#age").val(), $("#fName").val(), $("#lName").val(), $("#fName1").val(), $("#lName1").val(), (err, res) => {
@@ -291,12 +292,15 @@
       $("#btfindid").click(function() {
             $("#loader").show();
            Coursetro.findID(web3.eth.defaultAccount, $("#findid").val(), (err, res) => {
+			if (res)
+		  console.log(res.args);
                if (err) {
                    $("#loader").hide();
                }
            });
        });
-
+	  
+	 
     </script>
 
 </body>
