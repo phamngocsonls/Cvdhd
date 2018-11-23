@@ -37,14 +37,15 @@
  
 
         <label for="age" class="col-lg-2 control-label">Instructor Age</label>
-        <input id="age" type="text">
+        <input id="age" type="number">
 
         <button id="button">Update Instructor</button>
 
 		<label for="lName" class="col-lg-2 control-label">Find ID</label>
-		<input id="findid" type="text">
+		<input id="findid" type="number">
 		
 		<button id="btfindid">Find ID</button>
+		<button id="btfindat">Find At</button>
 
 		
 
@@ -251,7 +252,7 @@
 	}
 ]);
 
-    var Coursetro = CoursetroContract.at('0xd728909992a13dfee07d2f4f7dc2f6f2f083464a');
+    var Coursetro = CoursetroContract.at('0xb6b01d83a6c515d3df62062109c3f18c2396f96e');
         console.log(Coursetro);
 		
 		var instructorEvent = Coursetro.instructorInfo({},'latest');
@@ -274,10 +275,7 @@
             $("#countIns").html(res.c + ' Instructors');
        })*/
 
-	  /* Coursetro.findID((err, res) => {
-           if (res)
-            $("#instructor").html(res.c );
-       })*/
+	 
 	   
 	   
        $("#button").click(function() {
@@ -290,19 +288,21 @@
        });
 
       $("#btfindid").click(function() {
-            $("#loader").show();
-           Coursetro.findID(web3.eth.defaultAccount, $("#findid").val(), (err, res) => {
-			if (res)
-		  console.log(res.args);
-               if (err) {
-                   $("#loader").hide();
-               }
+		Coursetro.findID($("#findid").val(),(err, res) => {
+           if (res)
+           console.log(res);
            });
        });
-	  
+
+	    $("#btfindat").click(function() {
+		Coursetro.getCowInfoById($("#findid").val(),(err, res) => {
+           if (res)
+           console.log(res);
+           });
+       });
+		   
 	 
     </script>
 
 </body>
 </html>
-
