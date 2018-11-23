@@ -263,8 +263,8 @@
                     $("#loader").hide();
 
                $("#insTrans").html('Block hash: ' + result.blockHash);
-               $("#instructor").html(web3.toAscii(result.args.fName) + ' ' + web3.toAscii(result.args.lName) + ' ' + web3.toAscii(result.args.fName1) 
-			   + ' ' + web3.toAscii(result.args.lName1)+ ' ' + result.args.age );
+               $("#instructor").html((result.args.fName) + ' ' + (result.args.lName) + ' ' + (result.args.fName1) 
+			   + ' ' + (result.args.lName1)+ ' ' + result.args.age );
            } else {
                 $("#loader").hide();
            }
@@ -295,7 +295,7 @@
        });
 
 	    $("#btfindat").click(function() {
-		Coursetro.getCowInfoById($("#findid").val(),(err, res) => {
+		Coursetro.getInfoAt($("#findid").val(),(err, res) => {
            if (res)
            console.log(res);
            });
@@ -306,3 +306,4 @@
 
 </body>
 </html>
+
